@@ -14,10 +14,11 @@ package gluster
 
 import (
 	"fmt"
-	"github.com/emicklei/go-restful"
 	"io"
-	"skyring/apps"
-	"skyring/plugins"
+
+	"github.com/emicklei/go-restful"
+	"github.com/skyrings/skyring/apps"
+	"github.com/skyrings/skyring/plugins"
 )
 
 type GlusterApp struct {
@@ -61,7 +62,7 @@ func (a *GlusterApp) SetRoutes(container *restful.Container) error {
 
 func (a *GlusterApp) HelloGluster(request *restful.Request, response *restful.Response) {
 
-	rslt, err := a.plugin.SayHi("HelloGluster")
+	rslt, err := a.plugin.SayHi("Hello Gluster")
 
 	fmt.Println("rslt", rslt)
 	fmt.Println("rslt", err)
